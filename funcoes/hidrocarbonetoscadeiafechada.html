@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="Quimica_Organica">
+	<meta name="keywords" content = "IFRN, Química">
+	<meta name="author" content = "Mateus">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Hidrocarbonetos</title>
+	<script type="text/javascript">
+		/*CADEIA SATURADA*/
+		function cadeiasimples(){
+			document.write("<center>");
+			var numcarb = parseInt(prompt("Informe a quantidade de carbonos na cadeia entre 3 e 10:"));
+			while (numcarb > 10 || numcarb <= 2){
+				numcarb = parseInt(prompt("Informe a quantidade de carbonos na cadeia entre 3 e 10:"));
+			};
+
+			var infixo = ["met", "et", "prop", "but", "pent", "hex", "hept", "oct", "non", "dec"];
+			for (var i = 0; i < infixo.length; i++) {
+				if (numcarb == (i+1)){
+					var cadeia = "ciclo"+infixo[i]+"ano";
+				};
+			};
+			
+			document.write("O nome da molécula é: <b>" + cadeia + "</b><br><br><br><br>");
+
+			/*EXIBINDO A MOLÉCULA*/
+			var br = 0;
+			for (var i = 0; i < numcarb; i++){
+				if (numcarb == 3){
+					br += 1;
+					var img = cadeia + (i+1) + ".jpg";
+					document.write("<img title='"+cadeia+"' src='../img/"+img+"' alt='Img. "+cadeia+"' width='10%' height='20%'>");
+					if (br == 2){
+						document.write("<br>");
+					};
+				}
+				else if (numcarb == 4){
+					br += 1;
+					var img = cadeia + (i+1) + ".jpg";
+					document.write("<img title='"+cadeia+"' src='../img/"+img+"' alt='Img. "+cadeia+"' width='10%' height='20%'>");
+					if (br == 1 || br == 3){
+						document.write("<br>");
+					};
+				}
+			};
+			document.write("<br><br><br><br><br><br><br><br>Aperte F5 quando quiser!");
+			document.write("</center>");
+		};
+
+		/*CADEIA INSATURADA*/
+		function cadeiainsaturada(){};
+
+		/*CADEIA RAMIFICADA*/
+		function cadeiaramificada(){};
+	</script>
+	<style type = "text/css">
+		.botao {
+			border: 1;
+			cursor: pointer;
+			width: 200px;
+			height: 20px;
+		};
+	</style>
+</head>
+<body>
+	<input class="botao" type="submit" value="Cadeia Simples" onclick="cadeiasimples()">
+	<br><br>
+	<input class="botao" type="submit" value="Cadeia Insaturada" onclick="cadeiainsaturada()">
+	<br><br>
+	<input class="botao" type="submit" value="Cadeia Ramificada" onclick="cadeiaramificada()">
+	<br><br>
+	<a href="../index.html"><input class="botao" type="submit" value="<== Voltar à Página Inicial"></a>
+</body>
+</html>
